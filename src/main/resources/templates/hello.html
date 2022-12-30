@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Home</title>
+        <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="main-app">
+            <div sec:authorize="isAuthenticated()">
+                <div class="ta-r mr-3"><p>Welcome [[ ${user} ]]</p></div>
+                <div class="ta-r mr-3"><small>[[ ${email} ]]</small></div>
+                <div class="ta-r mr-3 mt-2"><button class="btn-login" onclick="logout()">Log out</button></div>
+                <br/>
+            </div>
+            <div sec:authorize="isAnonymous()">
+                <div class="ta-r mr-3 mt-2"><button class="btn-logout" onclick="login()">Log in</button></div>
+                <br/>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="prop: ${props}">
+                        <td class="prop">[[ ${prop.key} ]]</td>
+                        <td class="value">[[ ${prop.value} ]]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <script th:src="@{/js/index.js}"></script>
+        
+    </body>
+</html>

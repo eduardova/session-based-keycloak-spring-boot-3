@@ -1,0 +1,47 @@
+#main-app {
+    padding: 20px 0;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+.prop {
+    width: 15%;
+}
+.value {
+    width: 85%;
+}
+.ta-r {
+    text-align: right;
+}
+.mr-3 {
+    margin-right: 5%;
+}
+.mt-2 {
+    margin-top: 10px;
+}
+.btn-login, .btn-logout {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #e5e5e5;
+    color: #787878;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.btn-login:hover, .btn-logout:hover {
+    box-shadow: 0px 1px 3px 2px #d7d7d7;
+}
+td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    word-break: break-all;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
